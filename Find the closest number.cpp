@@ -77,3 +77,52 @@ else if(f==0)
 	//code
 	return 0;
 }
+/*
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ { 
+   int t;
+   cin>>t;
+   while(t--)
+   {
+   int n,k;
+   cin>>n>>k;
+   int a[n];
+   for(int i=0;i<n;i++)
+   cin>>a[i];
+  int l=0,r=n-1;
+  int d=INT_MAX;
+  int ans=-1;
+  while(l<=r)
+  {
+      int mid= (l+r)/2;
+      if(a[mid]<k)
+      {
+         if((k-a[mid])<d)
+        {
+            d=k-a[mid]; 
+            ans=a[mid];
+            
+        }
+        if((k-a[mid])==d && a[mid]>ans) ans=a[mid]; 
+        l=mid+1;
+      }
+      else
+      {
+          if((a[mid]-k) <d)
+        {
+            d=a[mid]-k; 
+            ans=a[mid];
+            
+        }
+         if((a[mid]-k)==d && a[mid]>ans) ans=a[mid]; 
+        r=mid-1;
+      }
+  }
+   cout<<ans<< endl;
+   }
+	//code
+	return 0;
+}
+*/
