@@ -34,7 +34,32 @@ Testcase 1: After merging two non-decreasing arrays, we have, 0 1 2 3 5 6 7 8 9.
 ** For More Input/Output Examples Use 'Expected Output' option **
 
 */
-
+/*
+	while(t--)
+	{
+	    long int x,y;
+	    cin>>x>>y;
+	    long long int p[x];
+	    long long int q[y];
+	    for(long int i=0;i<x;i++)
+	      cin>>p[i];
+	     for(long int i=0;i<y;i++)
+	      cin>>q[i];
+	     long  int i=0,j=0;
+	     while(i<x && j<y)
+	     {
+	         if(p[i]<q[j])
+	             cout<<p[i++]<<" ";
+	         else
+	           cout<<q[j++]<<" ";
+	     }
+	     while(i<x)
+	       cout<<p[i++]<<" ";
+	     while(j<y)
+	       cout<<q[j++]<<" ";
+	     cout<<endl;
+	}
+*/
 #include<bits/stdc++.h>
 #include<iostream>
 using namespace std;
