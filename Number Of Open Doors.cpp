@@ -1,0 +1,82 @@
+/*
+
+Number Of Open Doors [Editorial]
+A gate will be open in the end if and only if it has an odd number of factors.
+
+This is so because each gate is visited by its factors only. For example 100 will be visited by 1,2,4,5,10,20,25,50,100 in that order.  
+
+Only perfect squares have an odd number of factors (try proving this). 
+
+Hence the answer for N will be the number of perfect squares less than or equal to N.
+
+
+Useful Links to help understand the concepts of this problem !!
+
+https://www.geeksforgeeks.org/check-door-open-closed/
+
+Number Of Open Doors Submissions: 8134   Accuracy: 33.36%   Difficulty: Easy   Marks: 2
+Associated Course(s):   Interview Preparation   Sudo Placement [IITs]
+        
+Consider a long alley with a N number of doors on one side. All the doors are closed initially. You move to and fro in the alley changing the states of the doors as follows: you open a door that is already closed and you close a door that is already opened. You start at one end go on altering the state of the doors till you reach the other end and then you come back and start altering the states of the doors again.
+
+In the first go, you alter the states of doors numbered 1, 2, 3, … , n.
+
+In the second go, you alter the states of doors numbered 2, 4, 6 …
+
+In the third go, you alter the states of doors numbered 3, 6, 9 …
+
+You continue this till the Nth go in which you alter the state of the door numbered N.
+
+You have to find the number of open doors at the end of the procedure.
+
+Input:
+
+The first line of input contains a single integer T denoting the number of test cases. Then T test cases follow. Each test case consists of one line. The line consists of a positive integer N.
+Output:
+
+Corresponding to each test case, in a new line, print the number of doors that will be open at the end of the procedure mentioned above.
+
+Constraints:
+
+1 ≤ T ≤ 100
+
+1 ≤ N ≤ 1012             
+
+
+Example:
+Input
+5
+372
+2
+100
+825625
+63542
+
+Output
+19
+1
+10
+908
+252
+
+*/
+
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+int main()
+ {
+ int t;
+ cin>>t;
+ while(t--)
+ {
+    long long int n,c=0;
+     cin>>n;
+     /*(OR)for(long long int i=1;i*i<=n;i++)
+     c++;
+     cout<<c<<endl;*/
+ cout<<floor(sqrt(n))<<endl;
+ }
+	//code
+	return 0;
+}
