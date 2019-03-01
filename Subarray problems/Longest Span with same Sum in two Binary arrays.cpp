@@ -33,6 +33,62 @@ Output: 4
 The longest span with same sum is from index 1 to 4  (Zero indexing).
 */
 
+/*
+#include<iostream>
+#include<bits/stdc++.h>
+#define mod 1000000007
+using namespace std;
+int main()
+ {
+	int t,i,j,n,k;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n;
+	    int a[n];
+	    int b[n];
+	    for(i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    for(i=0;i<n;i++)
+	    {
+	        cin>>b[i];
+	    }
+	    for(i=0;i<n;i++)
+	    {
+	        b[i] = b[i]-a[i];
+	    }
+	    map<int , int >mp;
+	    int maxi=INT_MIN;
+	    int sum=0;
+	    for(i=0;i<n;i++)
+	    {
+	        sum  = sum + b[i];
+	        if(mp.find(sum)==mp.end())
+	        {
+	            mp[sum] = i;
+	        }
+	        else
+	        {
+	           maxi = max(maxi, i- mp[sum]);
+	           
+	        }
+	        if(sum ==0)
+	        {
+	            maxi = i+1;
+	        }
+	    }
+	    if(maxi!=INT_MIN)
+	    cout<<maxi<<"\n";
+	    else
+	    cout<<0<<"\n";
+	}
+	return 0;
+}
+
+*/
+
 #include<bits/stdc++.h>
 #include<iostream>
 using namespace std;
