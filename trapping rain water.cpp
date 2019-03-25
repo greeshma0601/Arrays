@@ -37,48 +37,42 @@ Testcase 1: Water trapped by block of height 4 is 3 units, block of height 0 is 
 
 
 //For every bar, at first i stored the max left height and max right height, you can easily understand the code for that. Then for every bar the max water height will be min(left max height , right max height) , the require more water will be min value obtained minus hight of that bar. 
-#include<bits/stdc++.h>
 #include<iostream>
-
+#include<bits/stdc++.h>
+#define ll long long
 using namespace std;
-
-int main()
+int main(){
+ll t; cin>>t;
+while(t--){
+	ll n; cin>>n;
+	vector<ll>a(n); ll i;
+	for(i=0;i<n;i++){
+		cin>>a[i];
+	}
+	ll left[n],right[n];
+	left[0]=a[0];
+	for(i=1;i<n;i++){
+		left[i]=max(left[i-1],a[i]);
+	}
+	right[n-1]=a[n-1];
+	for(i=n-2;i>=0;i--){
+		right[i]=max(right[i+1],a[i]);
+	}
+ /*for(int i=0;i<n;i++)
  {
-     long long int t;
-     cin>>t;
-     while(t--)
-     {
-        int n;
-        cin>>n;
-        int a[n];
-        for(int i=0;i<n;i++)
-            cin>>a[i];
-        int left[n];
-        int right[n];
-        left[0]=a[0];
-        right[n-1]=a[n-1];
-        for(int i=1;i<n;i++)
-        {
-            if(a[i-1]>left[i-1])
-                left[i]=a[i-1];
-            else
-                left[i]=left[i-1];
-        }
-        for(int i=n-2;i>=0;i--)
-        {
-            if(a[i+1]>right[i+1])
-                right[i]=a[i+1];
-            else
-                right[i]=right[i+1];
-        }
-        int ans=0;
-
-        for(int i=0;i<n;i++)
-        {
-            if(left[i]>a[i] && right[i]>a[i])
-                ans+=min(left[i],right[i])-a[i];
-        }
-
-        cout<<ans<<endl;
-    }
+     cout<<left[i]<<" ";
  }
+ cout<<endl;
+ for(int i=0;i<n;i++)
+ {
+     cout<<right[i]<<" ";
+ }
+ cout<<endl;*/
+	ll w=0;
+	for(i=1;i<n-1;i++){
+		w+=min(right[i],left[i])-a[i];
+	}
+	cout<<w<<endl;
+}
+	return 0;
+}
