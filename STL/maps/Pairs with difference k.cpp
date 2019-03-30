@@ -1,4 +1,57 @@
 /*
+By sorting :
+#include<algorithm>
+
+using namespace std;
+int main()
+ {
+	//code
+	
+	int t,n,k;
+	cin>>t;
+	while(t--)
+	{
+	    cin>>n>>k;
+	    int a[n];
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    
+	    sort(a,a+n);
+	    
+	    int count =0;
+	    int r=0,l=0;
+	    while(r<n)
+	    {
+	        int diff = a[r]-a[l];
+	        
+	        if(diff == k)
+	        {
+	           if(r!=l)    //when k is 0 count will be falsely incremented whenever r and l point to the same number in array
+	                count++;
+	            r++;
+	        }
+	        
+	        else if(diff > k)
+	        {
+	            l++;
+	            r=l;
+	        }
+	        
+	        else //diff < k
+	            r++;
+	        
+	    }
+	    cout<<count<<endl;
+	    
+	}
+	return 0;
+}
+*/
+
+/*
 Pairs with difference k Submissions: 4939   Accuracy: 32.14%   Difficulty: Easy   Marks: 2
        
 Problems
