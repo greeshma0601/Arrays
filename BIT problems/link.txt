@@ -1,0 +1,2 @@
+https://www.geeksforgeeks.org/c-bitset-and-its-application/
+https://www.geeksforgeeks.org/c-bitset-interesting-facts/
